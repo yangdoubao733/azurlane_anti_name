@@ -49,12 +49,11 @@ MT管理器![MT管理器](https://user-images.githubusercontent.com/75507531/227
 在65行粘贴一下内容
 ```small
 
+    const-string v0, "Dev_Liu"
 
-const-string v0, "Dev_Liu"
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-
-invoke-static {p0}, Lcom/unity3d/player/UnityPlayerActivity;->init(Landroid/content/
+    invoke-static {p0}, Lcom/unity3d/player/UnityPlayerActivity;->init(Landroid/content/Context;)V
 
 ```
 
@@ -74,16 +73,7 @@ Add the following method to `UnityPlayerActivity`, anywhere above its `onCreate`
 .method private static native init(Landroid/content/Context;)V
 .end method
 ```
-And these lines to `onCreate`:
-```smali
 
-
-## Loading the library
-Add the following method to `UnityPlayerActivity`, anywhere above its `onCreate`:
-```smali
-.method private static native init(Landroid/content/Context;)V
-.end method
-```
 And these lines to `onCreate`:
 ```smali
     const-string v0, "Dev_Liu"
